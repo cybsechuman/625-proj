@@ -23,12 +23,13 @@
 </head>
 
 <body>
-    <h2>HTML5 File Uploader</h2>
+    <h2>File Uploader</h2>
     <input type="file" name="file_to_upload" id="file_to_upload" accept=".jpg, .png, .img">
     <h3>Drag & Drop a File</h3>
     <div id="drop_zone">
         DROP FILE HERE
     </div>
+
     <hr>
     <p id="file_name"></p>
     <progress id="progress_bar" value="0" max="100" style="width:400px;" ></progress>
@@ -64,19 +65,17 @@
         function uploadFile(file) {
             var formData = new FormData();
             formData.append('file_to_upload', file);
-            var ajax = new XMLHttpRequest();
-            ajax.upload.addEventListener("progress", progressHandler, false);
-            ajax.open('POST', 'uploader.php');
-            ajax.send(formData);
+            var fileup625 = new XMLHttpRequest();
+            fileup625.upload.addEventListener("progress", progressHandler, false);
+            fileup625.open('POST', 'uploader.php');
+            fileup625.send(formData);
         }
-
         function progressHandler(event) {
             var percent = (event.loaded /event.total) * 100;
             document.getElementById("progress_bar").value = Math.round(percent);
             document.getElementById("progress_status").innerHTML = Math.round(percent) + "% uploaded";
         }
     </script>
-
-</body>
+    </body>
 
 </html>
