@@ -7,10 +7,10 @@ if (!$file_temp_location) {
     exit();
 }
 
-if(move_uploaded_file($file_temp_location, "uploads/$file_name")){
+if(move_uploaded_file($file_temp_location, "images/$file_name")){
     echo "$file_name upload is complete";
 } else {
     echo "A server was unable to move the file";
 }
-
+echo "<img src=".$filepath." height=200 width=300 />";
 ?>
